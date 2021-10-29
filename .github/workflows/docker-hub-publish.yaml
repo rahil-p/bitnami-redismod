@@ -1,5 +1,4 @@
 name: ci
-
 on:
   push:
     branches:
@@ -15,32 +14,32 @@ jobs:
       matrix:
         context:
           - tag: latest
-            args: |
-              redis_version=latest
-              redisai_version=latest-cpu-x64-bionic
-              redisearch_version=latest
-              redisgraph_version=latest
-              redistimeseries_version=latest
-              rejson_version=latest
-              rebloom_version=latest
+            redis_version: latest
+            redisai_version: latest-cpu-x64-bionic
+            redisearch_version: latest
+            redisgraph_version: latest
+            redistimeseries_version: latest
+            rejson_version: latest
+            rebloom_version: latest
+
           - tag: edge
-            args: |
-              redis_version=latest
-              redisai_version=edge-cpu-bionic
-              redisearch_version=edge
-              redisgraph_version=edge
-              redistimeseries_version=edge
-              rejson_version=edge
-              rebloom_version=edge
+            redis_version: latest
+            redisai_version: edge-cpu-bionic
+            redisearch_version: edge
+            redisgraph_version: edge
+            redistimeseries_version: edge
+            rejson_version: edge
+            rebloom_version: edge
+
           - tag: preview
-            args: |
-              redis_version=latest
-              redisai_version=preview
-              redisearch_version=2.2.0
-              redisgraph_version=preview
-              redistimeseries_version=preview
-              rejson_version=2.0.0
-              rebloom_version=preview
+            redis_version: latest
+            redisai_version: preview
+            redisearch_version: 2.2.0
+            redisgraph_version: preview
+            redistimeseries_version: preview
+            rejson_version: 2.0.0
+            rebloom_version: preview
+
     steps:
       - name: Setup QEMU
         uses: docker/setup-qemu-action@v1
@@ -59,6 +58,11 @@ jobs:
         with:
           push: true
           tags: rahilp/bitnami-redismod:${{ matrix.context.tag }}
-          build-args: ${{ matrix.context.args }}
-
-
+          build-args: |
+            redis_version=${{ matrix.context.redis_version }}
+            redisai_version=${{ matrix.context.redisai_version }}
+            redisearch_version=${{ matrix.context.redisearch_version }}
+            redisgraph_version=${{ matrix.context.redisgraph_version }}
+            redistimeseries_version=${{ matrix.context.redistimeseries_version }}
+            rejson_version=${{ matrix.context.rejson_version }}
+            rebloom_version=${{ matrix.context.rebloom_version }}
