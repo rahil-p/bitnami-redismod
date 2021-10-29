@@ -58,7 +58,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: rahilp/bitnami-redismod:${{ matrix.tag }}
-          build-args: ${{ matrix.args }}
+          tags: rahilp/bitnami-redismod:${{ matrix.context.tag }}
+          build-args: ${{ matrix.context.args }}
 
 
