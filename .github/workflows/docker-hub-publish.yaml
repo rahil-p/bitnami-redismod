@@ -34,10 +34,10 @@ jobs:
           - tag: preview
             redis_version: latest
             redisai_version: preview
-            redisearch_version: 2.2.0
+            redisearch_version: "2.2.0"
             redisgraph_version: preview
             redistimeseries_version: preview
-            rejson_version: 2.0.0
+            rejson_version: "2.0.0"
             rebloom_version: preview
 
     steps:
