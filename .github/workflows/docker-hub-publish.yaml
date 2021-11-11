@@ -15,7 +15,7 @@ jobs:
         context:
           - tag: latest
             redis_version: latest
-            redisai_version: latest-cpu-x64-bionic
+            redisai_version: latest
             redisearch_version: latest
             redisgraph_version: latest
             redistimeseries_version: latest

@@ -1,5 +1,5 @@
 ARG redis_version="latest"
-ARG redisai_version="latest-cpu-x64-bionic"
+ARG redisai_version="latest"
 ARG redisearch_version="latest"
 ARG redisgraph_version="latest"
 ARG redistimeseries_version="latest"
